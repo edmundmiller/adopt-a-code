@@ -7,3 +7,9 @@
 [[orgit:~/src/personal/adopt-a-code/][~/src/personal/adopt-a-code/ (magit-status)]]
 ** TODO Update homepage
 ** TODO Create a "Why is this a thing?" page
+** TODO Launching
+*** TODO Set up hosting
+*** TODO Buy a domain name
+*** TODO Make some socials for it?
+Later
+*** TODO Add a donate button
