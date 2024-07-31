@@ -1,0 +1,9 @@
+* Inbox
+** TODO Create contribution instructions
+*** TODO Instructions for adding a project to be adopted
+*** TODO Instructions for adopting a project
+** TODO Create PR template
+
+[[orgit:~/src/personal/adopt-a-code/][~/src/personal/adopt-a-code/ (magit-status)]]
+** TODO Update homepage
+** TODO Create a "Why is this a thing?" page
