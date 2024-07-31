@@ -1,11 +1,12 @@
 * Inbox
 ** TODO Create contribution instructions
-*** TODO Instructions for adding a project to be adopted
-*** TODO Instructions for adopting a project
+*** STRT Instructions for adding a project to be adopted
+*** STRT Instructions for adopting a project
 ** TODO Create PR template
 
 [[orgit:~/src/personal/adopt-a-code/][~/src/personal/adopt-a-code/ (magit-status)]]
-** TODO Update homepage
+** DONE Update homepage
+CLOSED: [2024-07-31 Wed 14:59]
 ** TODO Create a "Why is this a thing?" page
 ** TODO Starlight plugins
 *** TODO https://starlight-showcases.vercel.app/components/profiles/
