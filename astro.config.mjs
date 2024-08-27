@@ -1,5 +1,6 @@
 import { defineConfig } from "astro/config";
 import starlight from "@astrojs/starlight";
+import starlightLinksValidator from "starlight-links-validator";
 
 // https://astro.build/config
 export default defineConfig({
@@ -9,6 +10,7 @@ export default defineConfig({
       social: {
         github: "https://github.com/adoptacode",
       },
+      plugins: [starlightLinksValidator()],
       sidebar: [
         {
           label: "Getting Started",
