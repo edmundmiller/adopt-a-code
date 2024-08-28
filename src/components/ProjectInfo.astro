@@ -1,11 +1,12 @@
 ---
-import { Card, CardGrid } from '@astrojs/starlight/components';
-import { Code } from '@astrojs/starlight/components';
-import { Tabs, TabItem } from '@astrojs/starlight/components';
-import { Icon } from '@astrojs/starlight/components';
+import { Card, CardGrid } from "@astrojs/starlight/components";
+import { Code } from "@astrojs/starlight/components";
+import { Tabs, TabItem } from "@astrojs/starlight/components";
+import { Icon } from "@astrojs/starlight/components";
 
-const { title, description, repo, newHome, tags, language, license } = Astro.props.entry.data;
-console.log(Astro.props.entry.data)
+const { title, description, repo, newHome, tags, language, license } =
+  Astro.props.entry.data;
+console.log(Astro.props.entry.data);
 const exampleCode = `
     git clone https://github.com/Illumina/DRAGMAP.git
     cd DRAGMAP
@@ -14,48 +15,57 @@ const exampleCode = `
 ---
 
 <div class="flex items-center space-x-2 mb-4">
-  <span class="text-sm font-medium px-2.5 py-0.5 rounded bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-300">
+  <span
+    class="text-sm font-medium px-2.5 py-0.5 rounded bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-300"
+  >
     Adopted
   </span>
 </div>
 
-{ description }
+{description}
 
 <CardGrid stagger>
   <Card title="GitHub Repository" icon="github">
     {/* TODO Split the url up*/}
-   <a href={repo}>{repo}</a>
+    <a href={repo}>{repo}</a>
   </Card>
-   {newHome &&
-  <Card title="New Home" icon="external">
-    {/* TODO Split the url up*/}
-   <a href={newHome}>{newHome}</a>
-  </Card>
-
-}
-   {tags &&
-  <Card title="Field" icon="tag">
-      {tags.map((tag) => (
-    <li>{tag}</li>
-  ))}
-  </Card>
-}
-{ language &&
-  <Card title="Language" icon="code">
-      {language.map((item) => (
-    <li>{item}</li>
-  ))}
-  </Card>
- }
-{ license &&
-  <Card title="License" icon="document">
-    {license}
-  </Card>
-}
+  {
+    newHome && (
+      <Card title="New Home" icon="external">
+        {/* TODO Split the url up*/}
+        <a href={newHome}>{newHome}</a>
+      </Card>
+    )
+  }
+  {
+    tags && (
+      <Card title="Field" icon="tag">
+        {tags.map((tag) => (
+          <li>{tag}</li>
+        ))}
+      </Card>
+    )
+  }
+  {
+    language && (
+      <Card title="Language" icon="code">
+        {language.map((item) => (
+          <li>{item}</li>
+        ))}
+      </Card>
+    )
+  }
+  {
+    license && (
+      <Card title="License" icon="document">
+        {license}
+      </Card>
+    )
+  }
 </CardGrid>
 
 <Tabs>
   <TabItem label="Clone and Build">
-<Code code={exampleCode} lang="bash" />
+    <Code code={exampleCode} lang="bash" />
   </TabItem>
 </Tabs>

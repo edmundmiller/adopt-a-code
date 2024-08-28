@@ -101,4 +101,3 @@ the packages in the orphanage are there for different reasons.
     <li><a href="https://magit.vc/donate/paypal.html">PayPal</a></li>
   </ul>
 </details>
-

@@ -1,7 +1,7 @@
 ---
 name: Put a project up for adoption
 about: Found a project that needs some love? Can't maintain your own project anymore?
-title: '<project name>'
+title: "<project name>"
 labels: New Project
 assignees: edmundmiller
 # projects: ["octo-org/1", "octo-org/44"]

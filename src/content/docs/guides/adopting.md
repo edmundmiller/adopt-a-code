@@ -9,7 +9,7 @@ description: How to find the right project for you
 2. Fork the projects repo
 3. Make a PR to the adopt-a-code page adding that you've adopted the project, adding a link to your fork.
 4. If that project has a mentor, they'll comment back on the PR and discuss the project, goals and you all can decide if you're a good fit.
-4. Enjoy your new project!
+5. Enjoy your new project!
 
 ## First things to do
 
