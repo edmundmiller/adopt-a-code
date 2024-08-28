@@ -5,7 +5,7 @@ repo: https://github.com/zhongw2/GeneTEFlow
 sidebar:
   badge:
     text: Unmaintained
-last_commit: June 4, 2021
+lastCommitDate: June 4, 2021
 tags: ["Bioinformatics"]
 language: "Nextflow"
 doi: https://doi.org/10.1371/journal.pone.0232994

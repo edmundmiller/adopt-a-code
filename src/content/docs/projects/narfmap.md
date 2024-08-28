@@ -5,7 +5,7 @@ repo: https://github.com/Illumina/DRAGMAP
 sidebar:
   badge:
     text: Adopted
-new_home: https://github.com/bioinformaticsorphanage/NARFMAP
+newHome: https://github.com/bioinformaticsorphanage/NARFMAP
 tags: ["Bioinformatics"]
 language: "C++"
 license: "GPL-3"
