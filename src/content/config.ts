@@ -8,15 +8,14 @@ function removeDupsAndLowerCase(array: string[]) {
   return Array.from(distinctItems);
 }
 
-export const baseSchema = z.object({
-  description: z.string(),
-});
+export const baseSchema = z.object({});
 
 // TODO
 // Ideally I'd like to have a "docs", and a "projects" schema, and make the schema stricter.
 // This will work for now though
 export const projectSchema = baseSchema.extend({
-  repo: z.string().url().optional, // FIXME Remove optional
+  description: z.string(),
+  repo: z.string().url(),
   tags: z
     .array(z.string())
     .default([])
