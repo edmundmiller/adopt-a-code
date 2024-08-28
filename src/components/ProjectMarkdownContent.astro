@@ -1,0 +1,20 @@
+---
+import type { Props } from '@astrojs/starlight/props';
+import Default from '@astrojs/starlight/components/MarkdownContent.astro';
+import ProjectInfo from "./ProjectInfo.astro";
+
+const isProject = Astro.props.slug === 'projects/';
+---
+
+{
+  isProject ? (
+    <ProjectInfo {...Astro.props as any} />
+    <Default {...Astro.props}>
+      <slot />
+    </Default>
+  ) : (
+    <Default {...Astro.props}>
+      <slot />
+    </Default>
+  )
+}

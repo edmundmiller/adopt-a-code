@@ -27,6 +27,7 @@ export default defineConfig({
         },
       ],
       components: {
+        MarkdownContent: "./src/components/ProjectMarkdownContent.astro",
         Pagination: "./src/components/CustomPagination.astro",
       },
     }),
