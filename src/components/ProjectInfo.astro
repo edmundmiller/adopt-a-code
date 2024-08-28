@@ -4,9 +4,11 @@ import { Code } from "@astrojs/starlight/components";
 import { Tabs, TabItem } from "@astrojs/starlight/components";
 import { Icon } from "@astrojs/starlight/components";
 
-const { title, description, repo, newHome, tags, language, license } =
+const { title, description, repo, newHome, tags, language, doi, license } =
   Astro.props.entry.data;
-console.log(Astro.props.entry.data);
+const status = Astro.props.entry.data.sidebar.badge.text;
+console.log(status);
+
 const exampleCode = `
     git clone https://github.com/Illumina/DRAGMAP.git
     cd DRAGMAP
@@ -18,7 +20,7 @@ const exampleCode = `
   <span
     class="text-sm font-medium px-2.5 py-0.5 rounded bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-300"
   >
-    Adopted
+    {status}
   </span>
 </div>
 
@@ -59,6 +61,15 @@ const exampleCode = `
     license && (
       <Card title="License" icon="document">
         {license}
+      </Card>
+    )
+  }
+
+  {
+    doi && (
+      <Card title="DOI" icon="document">
+        {/* TODO Split the url up*/}
+        <a href={doi}>{doi}</a>
       </Card>
     )
   }
