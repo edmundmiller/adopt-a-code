@@ -3,7 +3,8 @@ import type { Props } from '@astrojs/starlight/props';
 import Default from '@astrojs/starlight/components/MarkdownContent.astro';
 import ProjectInfo from "./ProjectInfo.astro";
 
-const isProject = Astro.props.slug === 'projects/';
+// Anything under projects/
+const isProject = Astro.props.slug.startsWith('projects/');
 ---
 
 {
