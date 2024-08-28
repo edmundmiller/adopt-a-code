@@ -9,7 +9,7 @@ const isProject = Astro.props.slug.startsWith('projects/');
 
 {
   isProject ? (
-    <ProjectInfo {...Astro.props as any} />
+    <ProjectInfo {...Astro.props} />
     <Default {...Astro.props}>
       <slot />
     </Default>

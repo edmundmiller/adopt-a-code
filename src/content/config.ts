@@ -13,7 +13,7 @@ export const baseSchema = z.object({});
 // TODO
 // Ideally I'd like to have a "docs", and a "projects" schema, and make the schema stricter.
 // This will work for now though
-export const projectSchema = baseSchema.extend({
+export const projectsSchema = baseSchema.extend({
   description: z.string(),
   repo: z.string().url(),
   tags: z
@@ -37,7 +37,24 @@ export const projectSchema = baseSchema.extend({
   newHome: z.string().url().optional(),
 });
 
-export const docsCollectionSchema = z.union([baseSchema, projectSchema]);
+export const docsCollectionSchema = z.union([baseSchema, projectsSchema]);
+
+export type DocsEntryData = z.infer<typeof docsCollectionSchema>;
+
+export type DocsEntryType = DocsEntryData["type"];
+
+export type DocsEntry<T extends DocsEntryType> = CollectionEntry<"docs"> & {
+  data: Extract<DocsEntryData, { type: T }>;
+};
+
+export function createIsDocsEntry<T extends DocsEntryType>(type: T) {
+  return (entry: CollectionEntry<"docs">): entry is DocsEntry<T> =>
+    entry.data.type === type;
+}
+
+export type ProjectsEntry = DocsEntry<"projects">;
+
+export const isProjectsEntry = createIsDocsEntry("projects");
 
 export const collections = {
   docs: defineCollection({
