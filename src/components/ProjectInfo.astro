@@ -7,7 +7,6 @@ import { Icon } from "@astrojs/starlight/components";
 const { title, description, repo, newHome, tags, language, doi, license } =
   Astro.props.entry.data;
 const status = Astro.props.entry.data.sidebar.badge.text;
-console.log(status);
 
 const exampleCode = `
     git clone https://github.com/Illumina/DRAGMAP.git
@@ -16,6 +15,7 @@ const exampleCode = `
 `;
 ---
 
+{/* TODO Make this stand out*/}
 <div class="flex items-center space-x-2 mb-4">
   <span
     class="text-sm font-medium px-2.5 py-0.5 rounded bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-300"
@@ -24,6 +24,7 @@ const exampleCode = `
   </span>
 </div>
 
+{/* TODO Make this stand out*/}
 {description}
 
 <CardGrid stagger>
@@ -76,6 +77,8 @@ const exampleCode = `
 </CardGrid>
 
 <Tabs>
+  {/* TODO Add README tab */}
+  {/* TODO Add License tab */}
   <TabItem label="Clone and Build">
     <Code code={exampleCode} lang="bash" />
   </TabItem>
