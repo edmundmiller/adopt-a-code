@@ -6,7 +6,7 @@ sidebar:
   badge:
     text: "Unmaintained"
 tags: ["Bioinformatics"]
-language: "Python"
+language: ["Python"]
 doi: https://doi.org/10.1093/nar/gky1301
 lastCommitDate: June 20, 2022
 license: "GPL-3"

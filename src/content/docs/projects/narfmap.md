@@ -7,7 +7,7 @@ sidebar:
     text: Adopted
 newHome: https://github.com/bioinformaticsorphanage/NARFMAP
 tags: ["Bioinformatics"]
-language: "C++"
+language: ["C++"]
 license: "GPL-3"
 ---
 

@@ -8,56 +8,38 @@ function removeDupsAndLowerCase(array: string[]) {
   return Array.from(distinctItems);
 }
 
-export const baseSchema = z.object({});
-
-// TODO
-// Ideally I'd like to have a "docs", and a "projects" schema, and make the schema stricter.
-// This will work for now though
-export const projectsSchema = baseSchema.extend({
-  description: z.string(),
-  repo: z.string().url(),
-  tags: z
-    .array(z.string())
-    .default([])
-    .transform(removeDupsAndLowerCase)
-    .optional(),
-  // FIXME Can probably fetch this with the repo...
-  lastCommitDate: z
-    .string()
-    .or(z.date())
-    .transform((val) => new Date(val))
-    .optional(),
-  language: z.string().optional(), // FIXME Remove optional
-  doi: z.string().url().optional(),
-  // NOTE Gonna need to add more of these
-  // TODO Remove optional
-  license: z.enum(["MIT", "GPL-3", "GPL", null]).optional(),
-  mentor: z.string().optional(),
-  adopter: z.string().optional(),
-  newHome: z.string().url().optional(),
-});
-
-export const docsCollectionSchema = z.union([baseSchema, projectsSchema]);
-
-export type DocsEntryData = z.infer<typeof docsCollectionSchema>;
-
-export type DocsEntryType = DocsEntryData["type"];
-
-export type DocsEntry<T extends DocsEntryType> = CollectionEntry<"docs"> & {
-  data: Extract<DocsEntryData, { type: T }>;
-};
-
-export function createIsDocsEntry<T extends DocsEntryType>(type: T) {
-  return (entry: CollectionEntry<"docs">): entry is DocsEntry<T> =>
-    entry.data.type === type;
-}
-
-export type ProjectsEntry = DocsEntry<"projects">;
-
-export const isProjectsEntry = createIsDocsEntry("projects");
-
+// TODO Ideally I'd like to split these up and have two different schemas
+// But that's really complicated
 export const collections = {
   docs: defineCollection({
-    schema: docsSchema({ extend: docsCollectionSchema }),
+    schema: docsSchema({
+      extend: z.object({
+        description: z.string(),
+        repo: z.string().url().optional(), // FIXME Remove optional
+        tags: z
+          .array(z.string())
+          .default([])
+          .transform(removeDupsAndLowerCase)
+          .optional(),
+        // FIXME Can probably fetch this with the repo...
+        lastCommitDate: z
+          .string()
+          .or(z.date())
+          .transform((val) => new Date(val))
+          .optional(),
+        language: z
+          .array(z.string())
+          .default([])
+          .transform(removeDupsAndLowerCase)
+          .optional(), // FIXME Remove optional
+        doi: z.string().url().optional(),
+        // NOTE Gonna need to add more of these
+        // TODO Remove optional
+        license: z.enum(["MIT", "GPL-3", "GPL", null]).optional(),
+        mentor: z.string().optional(),
+        adopter: z.string().optional(),
+        newHome: z.string().url().optional(),
+      }),
+    }),
   }),
 };

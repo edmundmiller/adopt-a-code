@@ -6,7 +6,7 @@ sidebar:
   badge:
     text: "Up for Adoption"
 tags: ["Bioinformatics"]
-language: "perl"
+language: ["perl"]
 ---
 
 # Backstory

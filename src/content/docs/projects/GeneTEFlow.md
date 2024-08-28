@@ -7,7 +7,7 @@ sidebar:
     text: Unmaintained
 lastCommitDate: June 4, 2021
 tags: ["Bioinformatics"]
-language: "Nextflow"
+language: ["Nextflow"]
 doi: https://doi.org/10.1371/journal.pone.0232994
 ---
 
